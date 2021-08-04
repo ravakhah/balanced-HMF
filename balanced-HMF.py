@@ -179,8 +179,7 @@ for fold_id in range(1):
     t1 = time.time()       
     total_test_time = t1 - t0
     print('total_test_time = ', total_test_time)
-
-            
+           
     num_predictions = np.count_nonzero(Test_rates)
     E2Test = (Final_Predict - Test_rates)**2
     rmse = np.sqrt(np.sum(E2Test)/num_predictions)
@@ -198,12 +197,6 @@ for fold_id in range(1):
 print('mean mae = ', maes.mean())
 print('mean rmses = ', rmses.mean())
 
-conf_matrix = np.zeros((6,6))
-tests = np.where(Test_rates > 0)
-for i in range(tests[0].size):
-    predicted = int(Final_Predict[tests[0][i], tests[1][i]])
-    true_rate = int(Test_rates[tests[0][i], tests[1][i]])
-    conf_matrix[true_rate][predicted] += 1
 
               
                     
