@@ -17,7 +17,7 @@ C1 = 0.02
 C2 = 0.02
 K = 10
 t0 = time.time()
-for fold_id in range(1):
+for fold_id in range(10):
     print('fold number = ', fold_id)
     Y = np.loadtxt("..\ml_1m_10_fold_dataset/train" + str(fold_id+1) + ".txt", delimiter=',')    
     n = Y.shape[0] # number of users
